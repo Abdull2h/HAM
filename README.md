@@ -1,2 +1,2 @@
 # HAM
-Abdullah bajaber - Hammad alsafi - moh abduldaim
+Abdullah bajaber - Hammad alsafi - Mohammed abduldaim
