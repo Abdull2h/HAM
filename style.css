@@ -1,10 +1,23 @@
+
+.news {
+  padding: 20px 20%;
+}
+
+.cards {
+padding: 10px 10%;
+}
+
+.carousel {
+margin: 20px 15%;
+}
+
 footer{ 
-    list-style: none;
-    text-decoration-color: white;
-    box-shadow: 5px 0px 30px grey;
+list-style: none;
+text-decoration-color: white;
+box-shadow: 5px 0px 30px grey;
 padding: 30px 0px;
 background-color: #17a2b8;
-  }
+}
 
 footer a:any-link {
 color: white;    
