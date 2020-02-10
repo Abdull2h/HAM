@@ -61,19 +61,19 @@
           <div class="form-group row">
               <div class="col-xs-7" style="width: 20%; padding-left: 1%;">
                   <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required >
             </div>
           </div>
           <div class="form-group row" >
               <div class="col-xs-7" style="width: 20%; padding-left: 1%;">
                   <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
+                  <input type="password" class="form-control" id="exampleInputPassword1"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                   
               </div>
           </div>
           <div class="form-group form-check" >
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
-            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <label class="form-check-label" for="exampleCheck1">Stay logged in</label>
           </div>
           <button type="submit" class="btn btn-primary">Log in</button>
       
