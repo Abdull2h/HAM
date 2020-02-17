@@ -205,7 +205,7 @@ function countriesDropdown(container){
     ZAM: "Zambia",
     ZIM: "Zimbabwe"
     }
-    var out = "<select><option value=''>Choose a country</option>";
+    var out = "<select class='form-control' id='exampleFormControlSelect1' required><option value='' disabled selected>Choose a country</option>";
 	for (var key in countries) {
 		out += "<option value='" + key + "'>" + countries[key] + "</option>";
 	}

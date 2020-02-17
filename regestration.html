@@ -18,8 +18,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
- <script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script src="countries_dropdown.js"></script>
+  <script>
     function validation() {
       var p1 = document.getElementById('pass1').value;
       var p2 = document.getElementById('pass2').value;
@@ -36,6 +37,8 @@
         return false
       }
     }
+
+
   </script>
 </head>
 
@@ -67,9 +70,12 @@
               Categories
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="action.html">Action  <i class="fa fa-bomb" style="font-size:20px;color:#17a2b8"></i></a>
-              <a class="dropdown-item" href="adventure.html">Adventure  <i class='fas fa-gamepad' style='font-size:20px;color: #17a2b8'></i></a>
-              <a class="dropdown-item" href="sport.html">Sport <i  class='far fa-futbol' style='font-size:20px;color:  #17a2b8;'></i></a>
+              <a class="dropdown-item" href="action.html">Action <i class="fa fa-bomb"
+                  style="font-size:20px;color:#17a2b8"></i></a>
+              <a class="dropdown-item" href="adventure.html">Adventure <i class='fas fa-gamepad'
+                  style='font-size:20px;color: #17a2b8'></i></a>
+              <a class="dropdown-item" href="sport.html">Sport <i class='far fa-futbol'
+                  style='font-size:20px;color:  #17a2b8;'></i></a>
             </div>
           </li>
           <!-- 3 -->
@@ -91,35 +97,114 @@
 
   <div class="container" style="height: 100%; align-content: center;">
     <div class="d-flex justify-content-center h-100">
-      
-    <form action='index.html' onsubmit="return validation()" method='POST'>
-      <h3 style="text-align: center;">Registration</h3>
 
-      <div class="form-group row justify-content-md-center">
-        <div class="col-md">
-          <!--NAME FIELD-->
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" minlength="3" required>
-          <!--EMAIL FIELD-->
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
-          <!--PASSWORD FIELD-->
-          <label for="pass1">Password</label>
-          <input type="password" class="form-control" id="pass1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
-          <label for="pass2">Re-enter your password</label>
-          <input type="password" class="form-control" id="pass2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+      <form action='index.html' onsubmit="return validation()" method='POST'>
+        <h3 style="text-align: center;">Registration</h3>
+
+        <div class="form-group row justify-content-md-center" >
+          <div class="col-md">
+            <!--NAME FIELD-->
+            <label for="name">Full name</label>
+            <input type="text" class="form-control" id="name" minlength="3" required>
+            <!--PHONE FIELD-->
+            <label for="phone">Enter your phone number:</label>
+            <input type="tel" class="form-control" id="phone" required>
+
+            <!--COUNTRY FIELD-->
+            <label for="country">Country</label>
+            <div id="countries" ></div>
+            <script>
+              countriesDropdown("countries");
+            </script>
+            <!--EMAIL FIELD-->
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+            <!--PASSWORD FIELD-->
+            <label for="pass1">Password</label>
+            <input type="password" class="form-control" id="pass1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+            <label for="pass2">Re-enter your password</label>
+            <input type="password" class="form-control" id="pass2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+
+          </div>
         </div>
-      </div>
-      <div class="form-group form-check">
-        <!--CHECK BOX-->
-        <input type="checkbox" class="form-check-input" id="check1">
-        <label class="form-check-label" for="exampleCheck1">I agree to the terms and service</label>
-      </div>
-      <!--SUBMIT BUTTON-->
-      <div style="display: flex; justify-content: center; align-items: center;">
-      <button type="submit" class="btn btn-primary">Register</button>
-      </div>
-    </form>
+        <div class="form-group form-check">
+          <!--CHECK BOX-->
+          <input type="checkbox" class="form-check-input" id="check1">
+          <label class="form-check-label" for="exampleCheck1">I agree to the terms and service</label>
+          <!--TEST-->
+          <!-- Button trigger modal -->
+          <a data-toggle="modal" data-target="#exampleModalScrollable" id='termLink'>
+            <u>preview terms</u>
+          </a>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">TERMS AND CONDITIONS</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p id='contentOfTerms'>The following terms and conditions govern the use of all software (referred to
+                    collectively as the "Service" in this document) offered at MockFlow.com. The Service is offered
+                    subject to
+                    your acceptance without modification of all of the terms and conditions contained herein and all
+                    other
+                    operating rules, policies (including, without limitation, MockFlow's Privacy Policy) and procedures
+                    that may
+                    be published from time to time on this Site by the creator and owner of this software - A Produle
+                    Systems
+                    Pvt Limited.
+
+                    MockFlow reserves the right to update the TOS at any time. Your continued use of the service after
+                    such
+                    changes means that you agree to the revised terms even if you have not reviewed them. The most
+                    current
+                    version of the TOS is always available in this page. We will also provide our best efforts to notify
+                    registered users via email of any changes to this ToS and Privacy Policy.
+
+                    1. Acceptance of Terms
+                    Please read this Agreement carefully before accessing or using the Service. By accessing or using
+                    any part
+                    of the Service, you agree to become bound by the terms and conditions of this agreement. If you do
+                    not agree
+                    to all the terms and conditions of this agreement, then you may not access or use the service
+                    available at
+                    MockFlow. In consideration of your use of the Service, you represent that you are of legal age to
+                    form a
+                    binding agreement and are not a person barred under the laws of any applicable jurisdiction.
+
+                    2. Description of Service
+                    MockFlow provides a professional Design Suite for creative designers and UX engineers. At present,
+                    MockFlow
+                    provides free and paid plans with different levels of services and support. There is no
+                    time-restricted
+                    trial period, as the user may choose to upgrade/downgrade his/her account when desired.
+
+                    MockFlow does not claim ownership of the data and assets created using this service. The nature,
+                    content,
+                    intended creation and use of the service is the sole responsibility of the creator or compa</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary" onclick="document.getElementById('check1').checked=true"
+                    data-dismiss="modal">Accept</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--END TEST-->
+        </div>
+        <!--SUBMIT BUTTON-->
+        <div style="display: flex; justify-content: left; align-items: center;">
+          <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+      </form>
+
     </div>
   </div> <!-- End of container -->
 
@@ -133,20 +218,22 @@
             <th class="col-"><a href="index.html">News</a></th>
             <th class="col-">Find Us</th>
             <th class="col-"> </th>
-            <tr>
-              <td> </td>
-              <th> <a href="about_us.html">About us </a> </th>
-              <td> <a href="https://twitter.com/"><i class='fab fa-twitter' style='font-size:20px'></i> @GNN_news</td></a> 
+          <tr>
+            <td> </td>
+            <th> <a href="about_us.html">About us </a> </th>
+            <td> <a href="https://twitter.com/"><i class='fab fa-twitter' style='font-size:20px'></i> @GNN_news</td></a>
           </tr>
           <tr>
-              <td> </td>
-              <th> <a href="contact_us.html">Contact us </a></th>
-              <td><a href="https://www.instagram.com/"><i class='fab fa-instagram' style='font-size:20px'></i> GNN_news</td></a> 
+            <td> </td>
+            <th> <a href="contact_us.html">Contact us </a></th>
+            <td><a href="https://www.instagram.com/"><i class='fab fa-instagram' style='font-size:20px'></i> GNN_news
+            </td></a>
           </tr>
           <td> </td>
           <th> </th>
-          <td><a href="https://www.snapchat.com/"><i class='fab fa-snapchat' style='font-size:20px'></i> GNN_news</td></a> 
-      </tr>
+          <td><a href="https://www.snapchat.com/"><i class='fab fa-snapchat' style='font-size:20px'></i> GNN_news</td>
+          </a>
+          </tr>
 
 
           <ul class="list-unstyled list-inline text-center py-2">

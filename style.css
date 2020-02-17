@@ -27,3 +27,21 @@ text-decoration: none;
 table-layout: fixed;
 width: 100%;
 }
+#termLink:link {
+    color: red;
+    
+  }
+  
+
+  
+  /* mouse over link */
+  #termLink:hover {
+    color: hotpink;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  /* selected link */
+  #termLink:active {
+    color: blue;
+  }

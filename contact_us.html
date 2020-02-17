@@ -73,22 +73,30 @@
           <h1>Contact us</h1>
           <!--FORM-->
           <form action="index.html" method="POST">
-            <label for="fname">Full Name</label><br>
-            <input type="text" id="fname" name="fullname" placeholder="Full name.."><br>
-            <label for="email">E-mail</label> <br>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required><br>
+            <!--NAME FIELD-->
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" minlength="3">
+            <!--EMAIL FIELD-->
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+            <!--PHONE FIELD-->
             <label for="phone">Enter your phone number:</label>
-            <input type="tel" id="phone" name="phone"><br><br>
+            <input type="tel" class="form-control" id="phone" required>
+            <!--COUNTRY FIELD-->
             <label for="country">Country</label>
             <div id="countries"></div>
-
             <script>
               countriesDropdown("countries");
             </script>
-            <label for="subject"></label><br><br>
-            <textarea id="subject" name="subject" placeholder="Write something.." style="width: 120%; height: 80%;"
-              required></textarea>
-            <input type="submit" value="Submit">
+            <!--MESSAGE BOX-->
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write something.." rows="5" style="width: 200%;" required></textarea>
+              </div>
+            <!--SUBMIT BUTTON-->
+        <div style="display: flex; justify-content: left; align-items: center;">
+          <button type="submit" class="btn btn-primary">Send</button>
+        </div>
           </form>
         </div>
       </div>
