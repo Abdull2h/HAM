@@ -1,3 +1,4 @@
+var regstat=false
 function countriesDropdown(container){
     var countries = {
     AFG: "Afghanistan",

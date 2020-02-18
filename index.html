@@ -20,6 +20,13 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="countries_dropdown.js"></script>
+    <script>
+        var reg = document.getElementById('mmm')
+        if (regstat == true){
+            reg.hidden=false
+        }
+    </script>
 </head>
 
 <body>
@@ -64,7 +71,9 @@
         </nav>
     </div>
     <!-- End of navbar -->
-
+    <div class="alert alert-success" id="mmm" hidden> 
+        <strong>Success!</strong> You've been registered!
+      </div>
 
     <!-- Main content -->
     <div class="container">

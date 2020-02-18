@@ -24,18 +24,26 @@
     function validation() {
       var p1 = document.getElementById('pass1').value;
       var p2 = document.getElementById('pass2').value;
-
+      var errmsg = document.getElementById('eMsg')
+      var alert = document.getElementById('alert')
       if (p1 !== p2) {
-        alert('The two passwords do not match')
+        alert.hidden=false
+        errmsg.innerHTML = 'The passwords do not match!'
         return false
       }
       if (p1 == '' || p2 == '') {
-        alert('Enter the passwords')
-      }
-      if (check1.checked == false) {
-        alert('You must agree to the terms and services')
+        alert.hidden=false
+        errmsg.innerHTML = 'You must enter a password!'
         return false
       }
+      if (check1.checked == false) {
+        alert.hidden=false
+        errmsg.innerHTML = 'You must agree to the terms and services!'
+        return false
+      }
+    }
+    function subcheck(){
+      regstat = true
     }
 
 
@@ -98,7 +106,7 @@
   <div class="container" style="height: 100%; align-content: center;">
     <div class="d-flex justify-content-center h-100">
 
-      <form action='index.html' onsubmit="return validation()" method='POST'>
+      <form action='index.html' onsubmit="return subcheck()" method='POST'>
         <h3 style="text-align: center;">Registration</h3>
 
         <div class="form-group row justify-content-md-center" >
@@ -121,9 +129,10 @@
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
             <!--PASSWORD FIELD-->
             <label for="pass1">Password</label>
-            <input type="password" class="form-control" id="pass1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+            <input type="password" class="form-control" id="pass1" placeholder="6 characters atleast 1 uppercase letter,1 digit" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+            
             <label for="pass2">Re-enter your password</label>
-            <input type="password" class="form-control" id="pass2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
+            <input type="password" class="form-control" id="pass2" placeholder="6 characters atleast 1 uppercase letter,1 digit" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
 
           </div>
         </div>
@@ -201,7 +210,12 @@
         </div>
         <!--SUBMIT BUTTON-->
         <div style="display: flex; justify-content: left; align-items: center;">
-          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="submit" class="btn btn-primary" onclick="return validation()">Register</button>
+          
+        </div>
+        <br>
+        <div class="alert alert-danger" id="alert" hidden>
+          <strong>Error!</strong><p id="eMsg"></p>
         </div>
       </form>
 
