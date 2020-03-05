@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"
-        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
@@ -20,12 +20,12 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script src="myJs.js"></script>
+    <script src="countries_dropdown.js"></script>
     <script>
-      //  var reg = document.getElementById('mmm')
-      // if (regstat == true){
-      //       reg.hidden=false
-      //  }
+        var reg = document.getElementById('mmm')
+        if (regstat == true){
+            reg.hidden=false
+        }
     </script>
 </head>
 
@@ -125,20 +125,37 @@
                     <!-- news cards -->
                     <div class="row justify-content-md-center" style="margin: 3%;">
                         <div class="col-md-12" style="margin-bottom: 20%;">
-                        <!--Auto Inserted News-->
-                       
-                        <div id="cardGet" ></div>
-                        <script>
-                          cardPrint("cardGet");
-                        </script>
-                        <!--End Auto Inserted News-->
-        
+                        
+                        <!-- News #1 -->
+                        <div class="card border-info rounded mb-3">
+                            <img src="https://fakeimg.pl/700x250/" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-info text-center">Card title</h5>
+                              <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                        <!-- END of News #1 -->
+
+
+                        <!-- News #2 -->
+                        <div class="card border-info rounded mb-3">
+                            <img src="https://fakeimg.pl/700x250/" class="card-img-top" alt="...">
+                            <div class="card-body">
+                              <h5 class="card-title text-info text-center">Card title</h5>
+                              <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                        <!-- END of News #2 -->
+
+
                         <!-- News #3 -->
                         <div class="card border-info rounded mb-3">
                             <img src="https://fakeimg.pl/700x250/" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title text-info text-center">Card title</h5>
-                              <p class="card-text text-justify">This remains in the main page as an example</p>
+                              <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                               <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -157,7 +174,7 @@
     <!-- footer -->
     <footer>
         <div class="bg-info">
-            <div class="container">
+            <div class="container" style="padding: px;"></div>
                 <table class="col-md-8">
 
                     <!-- we use emmet (tr>th*4)-->
