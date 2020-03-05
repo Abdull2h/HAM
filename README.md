@@ -1,15 +1,16 @@
 # HAM Authors
 Abdullah bajaber - Hamad alsafi - Mohammed abduldaim
 
-# Brief
-* About the website
-we are GNN (Game News Network)
-video game news website
+# Brief 
+ ### About the website
+* we are GNN (Game News Network) <br>
+* video game news website
 
-* Aims of the website
- the objective of making this website, is to provide new updates, and news about video games to the gaming community 
+ ### Aims of the website
+* the objective of making this website, is to provide new updates, <br>
+* and news about video games to the gaming community 
 
- * Functionality 
+### Functionality 
  - Home 
  - Categories ( what kind of game you are searching for)
  - Regestration
@@ -17,8 +18,8 @@ video game news website
  - Contact us 
  - About us 
 
-* Target audience
-anyone who intrested in video games no matter what gender or age he/she is.
+### Targeted audience
+* anyone who intrested in video games no matter what gender or age he/she is.
 
 > # Notes
 > * Change the content of this readme file (see rubric)
