@@ -8,7 +8,7 @@ Abdullah bajaber - Hamad alsafi - Mohammed abduldaim
 
  ### Aims of the website
 * the objective of making this website, is to provide new updates, <br>
-* and news about video games to the gaming community 
+and news about video games to the gaming community 
 
 ### Functionality 
  - Home 
