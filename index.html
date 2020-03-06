@@ -20,13 +20,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-    <script src="countries_dropdown.js"></script>
-    <script>
-        var reg = document.getElementById('mmm')
-        if (regstat == true){
-            reg.hidden=false
-        }
-    </script>
+    <script src="card_get.js"></script>
 </head>
 
 <body>
@@ -125,42 +119,7 @@
                     <!-- news cards -->
                     <div class="row justify-content-md-center" style="margin: 3%;">
                         <div class="col-md-12" style="margin-bottom: 20%;">
-                        
-                        <!-- News #1 -->
-                        <div class="card border-info rounded mb-3">
-                            <img src="https://fakeimg.pl/700x250/" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title text-info text-center">Card title</h5>
-                              <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <!-- END of News #1 -->
-
-
-                        <!-- News #2 -->
-                        <div class="card border-info rounded mb-3">
-                            <img src="https://fakeimg.pl/700x250/" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title text-info text-center">Card title</h5>
-                              <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <!-- END of News #2 -->
-
-
-                        <!-- News #3 -->
-                        <div class="card border-info rounded mb-3">
-                            <img src="https://fakeimg.pl/700x250/" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title text-info text-center">Card title</h5>
-                              <p class="card-text text-justify">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
-                        </div>
-                        <!-- END of News #3 -->
-                        
+                        <div id="cardGet"></div>
                         </div>
                     </div>
                 </div>
