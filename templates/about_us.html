@@ -1,71 +1,7 @@
-<!-- we use emmet html5-->
-<!DOCTYPE html>
-<html lang="en">
+{%extends "layout.html"%}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>About Us</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.js"
-    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-</head>
 
-<body>
-  <!-- Navbar -->
-  <div class="header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-info">
-      <!-- logo -->
-      <a class="navbar-brand" href="#">
-        <img src="image/logo4.jpg.png" width="100" height="75" alt="joystick">
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <!-- 1 -->
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <!-- 2 -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Categories
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="action.html">Action  <i class="fa fa-bomb" style="font-size:20px;color:#17a2b8"></i></a>
-              <a class="dropdown-item" href="adventure.html">Adventure  <i class='fas fa-gamepad' style='font-size:20px;color: #17a2b8'></i></a>
-              <a class="dropdown-item" href="sport.html">Sport <i  class='far fa-futbol' style='font-size:20px;color:  #17a2b8;'></i></a>
-            </div>
-          </li>
-          <!-- 3 -->
-          <li class="nav-item">
-            <a class="btn btn-light" href="login.html">Login</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-  </div>
-  <div style="margin-left: auto;  margin-top: 5%; padding-left: 25%; padding-bottom: 20%">
-
-    <!--Logo-->
-    <img src="image/logo4.jpg.png" width="200" height="200" alt="joystick"><br>
-
+{%block myContent%}
     <!--Contents-->
     <h1 style="color : #17a2b8;">About Us</h1>
     <h2 style="color: #0f4fa1;"> we are GNN (Game News Network)</h2> <br>
@@ -76,9 +12,8 @@
     <h3 style="color:#0f4fa1 ;">-Reviews</h3><br>
     <h3 style="color:#0f4fa1 ;">-etc</h3><br>
 
-  </div>
 
-
+  {%endblock myContent%}
 
 
 
