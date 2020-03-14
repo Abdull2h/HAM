@@ -1,7 +1,10 @@
 from flask import Flask,render_template,request
+from data import storeData,readData,members
 
 
 app = Flask(__name__)
+app.secret_key='c757593904c759f0b8b463ee0165bced'
+
 @app.route("/")
 @app.route("/index.html")
 @app.route("/index")
@@ -22,6 +25,27 @@ def contact_us():
 @app.route("/regestration")
 def register():
     return render_template('regestration.html', title = 'Register')
+
+@app.route('/handle_data', methods=['POST', 'GET'])
+def handle_data():
+    us = request.form['name']
+    pw = request.form['password']
+    umail = request.form['email']
+    phone = request.form['phone']
+    if us in members:
+        return render_template('regestration.html', 
+        us = us,
+        pw = pw,
+        umail = umail,
+        phone = phone,
+        errmsg=True)
+    else:
+        storeData(us, pw, phone, umail)
+        return render_template(
+            'index.html',
+            message=f"{us} is registered, {umail},{phone}",
+            msgStat=True)
+
 
 @app.route("/login.html")
 @app.route("/login")
@@ -48,5 +72,4 @@ def sport():
 def adventure():
     return render_template('adventure.html', title = 'Adventure Games')
 
-if __name__ == '__main__':
-    app.run(debug=True)
+app.run(debug=True)

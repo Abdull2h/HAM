@@ -7,7 +7,7 @@
     var p1 = document.getElementById('pass1').value;
     var p2 = document.getElementById('pass2').value;
     var errmsg = document.getElementById('eMsg')
-    var alert = document.getElementById('alert')
+    var alert = document.getElementById('alert');
     if (p1 !== p2) {
       alert.hidden=false
       errmsg.innerHTML = 'The passwords do not match!'
@@ -23,37 +23,39 @@
       errmsg.innerHTML = 'You must agree to the terms and services!'
       return false
     }
+    
   }
 </script>
+
 {%endblock head%}
 {%block myContent%}
   <div class="container" style="height: 100%; align-content: center;">
     <div class="d-flex justify-content-center h-100">
 
-      <form action='index.html' onsubmit="return subcheck()" method='POST'>
+      <form action="{{ url_for('handle_data') }}" onsubmit="return subcheck()" method='POST'>
         <h3 style="text-align: center;">Registration</h3>
 
         <div class="form-group row justify-content-md-center" >
           <div class="col-md-12">
             <!--NAME FIELD-->
             <label for="name">Full name</label>
-            <input type="text" class="form-control" id="name" minlength="3" required> </br>
+            <input type="text" class="form-control" id="name" name='name' minlength="3" value="{{ us }}" required> </br>
             <!--PHONE FIELD-->
             <label for="phone">Enter your phone number:</label>
-            <input type="tel" class="form-control" id="phone" required> </br>
+            <input type="tel" class="form-control" id="phone" name='phone' value="{{ phone }}" required> </br>
 
             <!--COUNTRY FIELD-->
             <label for="country">Country</label>
-            <div id="countries" ></div>
+            <div id="countries" name = 'country' ></div>
             <script>
               countriesDropdown("countries");
             </script> </br>
             <!--EMAIL FIELD-->
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required> </br>
+            <input type="email" class="form-control" id="email" name='email' value="{{ umail }}" aria-describedby="emailHelp" required> </br>
             <!--PASSWORD FIELD-->
             <label for="pass1">Password</label>
-            <input type="password" class="form-control" id="pass1" placeholder="6 characters atleast 1 uppercase letter,1 digit" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"> </br>
+            <input type="password" class="form-control" id="pass1" name='password' placeholder="6 characters atleast 1 uppercase letter,1 digit" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}"> </br>
             
             <label for="pass2">Re-enter your password</label>
             <input type="password" class="form-control" id="pass2" placeholder="6 characters atleast 1 uppercase letter,1 digit" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
@@ -106,6 +108,14 @@
         <div class="alert alert-danger" id="alert" hidden>
           <strong>Error!</strong><p id="eMsg"></p>
         </div>
+        {%if errmsg == True%}
+        <script>
+          var alert = document.getElementById('alert')
+          var errmsg = document.getElementById('eMsg')
+          alert.hidden = false
+          errmsg.innerHTML = 'This name exist'
+        </script>
+        {%endif%}
       </form>
 
     </div>

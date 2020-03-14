@@ -1,3 +1,4 @@
 .vscode/settings.json
 pytest/test.py
 __pycache__/flask.cpython-37.pyc
+__pycache__/data.cpython-37.pyc

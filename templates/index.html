@@ -7,7 +7,12 @@
         <div class="row justify-content-md-center">
 
             <div class="col-md-10">
-                
+                {%if msgStat == True%}
+                <div class="alert alert-primary" role="alert">
+                    {{message}}
+                  </div>
+                  {%endif%}
+                 
                 <!-- Carousel -->
                 <div class="carousel" style="margin-bottom: 5%;">
 
