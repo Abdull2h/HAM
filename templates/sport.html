@@ -8,47 +8,38 @@
                 <h3 class="text-center">Sport Games <i class='far fa-futbol'
                         style='font-size:36px;color:  #17a2b8;'></i> </h3> </br>
 
-                <!-- game #1-->
-                <div class="card border-1 border-info rounded mb-3" style="max-width: 700px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-5">
-                            <img src="static/image/fifa20.png" class="card-img" style="width: 300px; height: 405px;">
-                        </div>
-                        <div class="col-md-7">
-                            <div class="card-body">
-                                <h5 class="card-title text-info text-center">FIFA 20</h5>
-                                <p class="card-text  text-justify">Powered by Frostbite, EA Sports FIFA 20 brings two
-                                    sides of The World’s Game to life --
-                                    the prestige of the professional stage and an all-new authentic street football
-                                    experience in EA Sports Volta.
-                                    FIFA 20 innovates across the game, Football Intelligence unlocks an unprecedented
-                                    platform for gameplay realism,
-                                    FIFA Ultimate Team offers more ways to build your dream squad, and EA Sports Volta
-                                    returns the game to the street,
-                                    with an authentic form of small-sided football.</br>
-                                    Visit <a href="https://www.ea.com/games/fifa/fifa-20">EA website</a> to see full
-                                    features.</p>
+                        {%for p in post%}
+                        <div class="card border-1 border-info rounded mb-3" style="max-width: 700px;">
+                          <div class="row no-gutters">
+                            <div class="col-md-5">
+                              <img src="{{post[p]['pic']}}" class="card-img" style="width: 300px; height: 405px;">
+                            </div>
+                            <div class="col-md-7">
+                              <div class="card-body">
+                                <h5 class="card-title text-info text-center">{{ post[p]['title'] }}</h5>
+                                <p class="card-text  text-justify">{{post[p]['desc'] | safe}}</p>
                                 <div class="row justify-content-md-center">
-                                    <div class="col-md-6">
-                                        <button type="submit" class="btn btn-danger btn-lg btn-block"
-                                            data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                                            aria-controls="collapseExample">Trailer</button>
-                                    </div>
+                                  <div class="col-md-6">
+                                    <button type="submit" class="btn btn-danger btn-lg btn-block" data-toggle="collapse"
+                                      data-target="#collapseExample{{ p }}" aria-expanded="false"
+                                      aria-controls="collapseExample">Trailer</button>
+                                  </div>
                                 </div>
+                
+                              </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="collapse" id="collapseExample" style="margin-top: 20px;">
-                        <div class="row no-gutters justify-content-md-center">
-                            <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/vgQNOIhRsV4"
-                                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen></iframe>
+                          </div>
+                          <div class="collapse" id="collapseExample{{ p }}" style="margin-top: 20px;">
+                            <div class="row no-gutters justify-content-md-center">
+                              <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="{{post[p]['link']}}"
+                                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                  allowfullscreen></iframe>
+                              </div>
                             </div>
+                          </div>
                         </div>
-                    </div>
-                </div>
-                <!-- End of game #1-->
+                        {%endfor%}
 
             </div> <!-- End of col-md-10 -->
         </div> <!-- End of row -->

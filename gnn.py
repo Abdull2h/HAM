@@ -1,5 +1,5 @@
 from flask import Flask,render_template,request
-from data import storeData,readData,members
+from data import storeData,readData
 
 
 app = Flask(__name__)
@@ -32,6 +32,7 @@ def handle_data():
     pw = request.form['password']
     umail = request.form['email']
     phone = request.form['phone']
+    members = readData('data.json')
     if us in members:
         return render_template('regestration.html', 
         us = us,
@@ -40,7 +41,7 @@ def handle_data():
         phone = phone,
         errmsg=True)
     else:
-        storeData(us, pw, phone, umail)
+        storeData(members, 'data.json', 'data','none', us, pw, phone, umail)
         return render_template(
             'index.html',
             message=f"{us} is registered, {umail},{phone}",
@@ -60,16 +61,22 @@ def users():
 @app.route("/action.html")
 @app.route("/action")
 def action():
-    return render_template('action.html', title = 'Action Games')
+    getpost = readData('posts.json')
+    post=getpost['action']
+    return render_template('action.html', title = 'Action Games',post=post)
 
 @app.route("/sport.html")
 @app.route("/sport")
 def sport():
-    return render_template('sport.html', title = 'Sport Games')
+    getpost = readData('posts.json')
+    post=getpost['sports']
+    return render_template('sport.html', title = 'Sport Games', post = post)
 
 @app.route("/adventure.html")
 @app.route("/adventure")
 def adventure():
-    return render_template('adventure.html', title = 'Adventure Games')
+    getpost = readData('posts.json')
+    post=getpost['adventure']
+    return render_template('adventure.html', title = 'Adventure Games',post=post)
 
 app.run(debug=True)
