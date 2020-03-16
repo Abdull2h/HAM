@@ -16,16 +16,16 @@
         <div class="col-xs-7" style="width: 20%;">
           <h1>Contact us</h1>
           <!--FORM-->
-          <form action="index.html" method="POST">
+          <form action="{{ url_for('sendM') }}" method="POST">
             <!--NAME FIELD-->
             <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" minlength="3">
+            <input type="text" class="form-control" id="name" name="name" minlength="3">
             <!--EMAIL FIELD-->
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
             <!--PHONE FIELD-->
             <label for="phone">Enter your phone number:</label>
-            <input type="tel" class="form-control" id="phone" required>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
             <!--COUNTRY FIELD-->
             <label for="country">Country</label>
             <div id="countries"></div>
@@ -35,7 +35,7 @@
             <!--MESSAGE BOX-->
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write something.." rows="5" style="width: 200%;" required></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="body" placeholder="Write something.." rows="5" style="width: 200%;" required></textarea>
               </div>
             <!--SUBMIT BUTTON-->
         <div style="display: flex; justify-content: left; align-items: center;">

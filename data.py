@@ -2,12 +2,7 @@ import json
 def readData(filename):
     with open(filename) as json_file:
         return json.load(json_file)
-'''
-def storeData(member, us, pw, phone, umail):
-    member[us]={"pass": pw, "phone": phone, "email": umail}
-    with open('data.json', 'w') as outfile:
-        json.dump(member, outfile)
-'''
+        
 def storeData(srcvar, filename, storein, cat, *data):
     if storein == 'data':
         list(data)
