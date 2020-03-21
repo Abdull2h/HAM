@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,session,redirect,url_for
 from flask_mail import Mail, Message
 from data import storeData,readData
 from datetime import timedelta
+from json import dumps
 
 
 app = Flask(__name__)
@@ -95,27 +96,6 @@ def make_session_permanent():
 def users():
     return render_template('users.html', title = 'Users List')
 
-@app.route("/action.html")
-@app.route("/action")
-def action():
-    getpost = readData('posts.json')
-    post=getpost['action']
-    return render_template('action.html', title = 'Action Games',post=post)
-
-@app.route("/sport.html")
-@app.route("/sport")
-def sport():
-    getpost = readData('posts.json')
-    post=getpost['sports']
-    return render_template('sport.html', title = 'Sport Games', post = post)
-
-@app.route("/adventure.html")
-@app.route("/adventure")
-def adventure():
-    getpost = readData('posts.json')
-    post=getpost['adventure']
-    return render_template('adventure.html', title = 'Adventure Games',post=post)
-
 @app.route('/set', methods=['POST', 'GET'])
 def set():
     us = request.form['name']
@@ -132,8 +112,6 @@ def set():
         
     return render_template('login.html', us='wrong username')
 
-    
-
 @app.route('/get/')
 def get():
     if session.get('logged_in') == True:
@@ -145,6 +123,16 @@ def pop():
     session.pop('current_user')
     session.pop('logged_in')
     return redirect('/index.html')
+
+@app.route('/<string:cat>')
+def cat(cat):
+    getgame = readData('games.json')
+    try:
+        game=getgame[cat]
+        return render_template('cat_page.html', title=cat.capitalize(), game=game)
+    except KeyError:
+        return render_template('404.html',title='Error - 404'), 404
+
 @app.errorhandler(404)
 def err_404(error):
    return render_template('404.html',title='Error - 404'), 404

@@ -1,0 +1,46 @@
+{%extends "layout.html"%}
+{%block myContent%}
+  <!-- action game -->
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-8">
+
+        <h3 class="text-center">{{ title }} Games <i class='fa fa-bomb' style='font-size:36px;color:  #17a2b8;'></i></h3>
+        </br>
+        {%for g in game%}
+        <div class="card border-1 border-info rounded mb-3" style="max-width: 700px;">
+          <div class="row no-gutters">
+            <div class="col-md-5">
+              <img src="{{g['pic']}}" class="card-img" style="width: 300px; height: 405px;">
+            </div>
+            <div class="col-md-7">
+              <div class="card-body">
+                <h5 class="card-title text-info text-center">{{ g['title'] }}</h5>
+                <p class="card-text  text-justify">{{g['desc'] | safe}}</p>
+                <div class="row justify-content-md-center">
+                  <div class="col-md-6">
+                    <button type="submit" class="btn btn-danger btn-lg btn-block" data-toggle="collapse"
+                      data-target="#collapseExample{{ g['id'] }}" aria-expanded="false"
+                      aria-controls="collapseExample">Trailer</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="collapse" id="collapseExample{{ g['id'] }}" style="margin-top: 20px;">
+            <div class="row no-gutters justify-content-md-center">
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="{{g['link']}}"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div> <!-- End of col-md-10 -->
+    </div> <!-- End of row -->
+  </div> <!-- End of container -->
+  <!-- end of action games -->
+  {%endblock myContent%}

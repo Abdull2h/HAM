@@ -7,7 +7,7 @@ def storeData(srcvar, filename, storein, cat, *data):
     if storein == 'data':
         list(data)
         srcvar[data[0]]={"pass": data[1], "phone": data[2], "email": data[3]}
-    elif storein == 'posts':
+    elif storein == 'games':
         return
 
     with open(filename, 'w') as outfile:
