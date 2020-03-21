@@ -66,9 +66,15 @@
                       </div>
                   </li>
                   <!-- 3 -->
+                  {% if session['logged_in']==True %}
                   <li class="nav-item">
-                      <a class="btn btn-light" href="login.html">Login</a>
+                      <a class="btn btn-light" href="/pop/">Logout</a>
                   </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="btn btn-light" href="login.html">Login</a>
+                </li>
+                  {% endif %}
               </ul>
           </div>
       </nav>

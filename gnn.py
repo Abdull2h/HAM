@@ -144,7 +144,7 @@ def get():
 def pop():
     session.pop('current_user')
     session.pop('logged_in')
-    return f"cuurent_user is removed"
+    return redirect('/index.html')
 @app.errorhandler(404)
 def err_404(error):
    return render_template('404.html',title='Error - 404'), 404
