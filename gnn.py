@@ -3,6 +3,8 @@ from flask_mail import Mail, Message
 from data import storeData,readData
 from datetime import timedelta
 from json import dumps
+from waitress import serve
+import os
 
 
 app = Flask(__name__)
@@ -137,4 +139,12 @@ def cat(cat):
 def err_404(error):
    return render_template('404.html',title='Error - 404'), 404
 
-app.run(debug=True)
+
+if __name__ == '__main__':
+   # print("-- DEBUG MODE ----")
+   # app.run(debug=True, port='5091')
+
+   print("--- PRODUCTION MODE ---")
+   p = os.environ.get('PORT')
+   p = '5000' if p == None else p
+   serve(app, host='0.0.0.0', port=p)
