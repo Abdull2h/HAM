@@ -10,11 +10,11 @@
 {%block myContent%}
   
 
-  <div style="margin-left: auto; margin-bottom: 25%; margin-top: 5%; padding-left: 10%;">
-    <div class="column">
-      <div class="form-group row" style="margin: auto;">
-        <div class="col-xs-7" style="width: 20%;">
-          <h1>Contact us</h1>
+<div class="container" style="height: 100%; align-content: center;">
+  <div class="form-group row justify-content-md-center" >
+    <div class="col-md-8">
+      <div style="padding: 10% 20%;">
+        <h3 style="text-align: center;">Contact us</h3>
           <!--FORM-->
           <form action="{{ url_for('sendM') }}" method="POST">
             <!--NAME FIELD-->
@@ -35,12 +35,12 @@
             <!--MESSAGE BOX-->
               <div class="form-group">
                 <label for="exampleFormControlTextarea1">Message</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" name="body" placeholder="Write something.." rows="5" style="width: 200%;" required></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="body" placeholder="Write something.." rows="5" required></textarea>
               </div>
             <!--SUBMIT BUTTON-->
-        <div style="display: flex; justify-content: left; align-items: center;">
-          <button type="submit" class="btn btn-primary">Send</button>
-        </div>
+            <div style="  display: flex; justify-content: center; align-items: center;">
+              <button type="submit" class="btn btn-primary">Send</button>
+            </div>
           </form>
         </div>
       </div>

@@ -3,21 +3,22 @@
 {%block myContent%}
   
   <!--MAIN FORM-->
-<div class="container" style="height: 100%; align-content: center;">
-<div class="d-flex justify-content-center h-100">
+  <div class="container" style="height: 100%; align-content: center;">
+  <div class="form-group row justify-content-md-center" >
+  <div class="col-md-6">
   <div style="padding: 10% 20%;">
   <h3 style="text-align: center;">Login</h3>
     <form action="{{ url_for('set') }}" method='POST'>  
       <!--EMAIL FIELD-->
       <div class="form-group row">
-        <div class="col-xs-7" style="">
+        <div class="col" style="">
           <label for="name">Full name</label>
           <input type="text" class="form-control" id="name" name='name' minlength="3" value="{{ us }}" required>
         </div>
       </div>
       <!--PASSWORD FIELD-->
       <div class="form-group row">
-        <div class="col-xs-7" >
+        <div class="col" >
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1"
             name="password" required>
@@ -36,5 +37,6 @@
     </form>
   </div> 
   </div> 
+  </div>
 </div> <!-- end of container -->
 {%endblock myContent%}
