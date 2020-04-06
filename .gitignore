@@ -5,3 +5,6 @@ __pycache__/data.cpython-37.pyc
 __pycache__/data.cpython-38.pyc
 venv
 .DS_Store
+chromedriver.exe
+front_test.py
+debug.log
