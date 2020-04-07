@@ -3,6 +3,7 @@ pytest/test.py
 __pycache__/flask.cpython-37.pyc
 __pycache__/data.cpython-37.pyc
 __pycache__/data.cpython-38.pyc
+__pycache__
 venv
 .DS_Store
 chromedriver.exe
