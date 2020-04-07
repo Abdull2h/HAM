@@ -50,7 +50,8 @@ def sendM():
     mail.send(msg)
     return render_template('/index.html',
             message=f"{name}, your message has been sent. we'll contact you on: {email} or {phone}",
-            msgStat=True)
+            msgStat=True,
+            title = 'Home Page')
    
 @app.route("/regestration.html")
 @app.route("/regestration")
@@ -72,13 +73,15 @@ def handle_data():
         pw = pw,
         email = email,
         phone = phone,
-        errmsg=True)
+        errmsg=True,
+        title = 'Register')
     else:
         storeData(members, 'data.json', 'data','none', us, pw, phone, email)
         return render_template(
             'index.html',
             message=f"{us} is registered, {email},{phone}",
-            msgStat=True)
+            msgStat=True,
+            title = 'Home Page')
 
 
 @app.route("/login.html")
@@ -110,9 +113,11 @@ def set():
                 session['logged_in']=True
                 return redirect('/index.html')
             else:
-                return render_template('login.html', us = 'wrong pass')
+                return render_template('login.html', message=f"Wrong password",
+            errmsg=True, title = 'Login')
         
-    return render_template('login.html', us='wrong username')
+    return render_template('login.html', message=f"Wrong username",
+            errmsg=True,title = 'Login')
 
 @app.route('/get/')
 def get():

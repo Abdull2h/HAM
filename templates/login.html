@@ -34,6 +34,15 @@
       <div style="  display: flex; justify-content: center; align-items: center;">
         <button type="submit" class="btn btn-primary">Log in</button>
       </div>
+      <div class="alert alert-danger" id="alert" hidden>
+        <strong>Error! {{message}}</strong><p id="eMsg"></p>
+      </div>
+      {%if errmsg == True%}
+      <script>
+        var alert = document.getElementById('alert')
+        alert.hidden = false
+      </script>
+      {%endif%}
     </form>
   </div> 
   </div> 
